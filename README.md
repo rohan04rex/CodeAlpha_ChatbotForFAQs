@@ -149,18 +149,6 @@ Optional filter: `?category=Internship%20Rules`
 
 ---
 
-## 🎓 CodeAlpha AI Internship Checklist
-
-- [x] Repository named `CodeAlpha_ChatbotForFAQs`
-- [x] Collected and categorized FAQ dataset (`data/faqs.json`, 27 entries)
-- [x] Preprocessed text using NLP (tokenize, clean, stopwords, lemmatize)
-- [x] Matched questions with TF-IDF and cosine similarity
-- [x] Displayed the best matching answer with confidence and fallback handling
-- [x] Built an interactive, accessible chat UI
-- [x] Verified with an automated offline test suite (18 tests)
-
----
-
 ## 👤 Author
 
 Developed for the **CodeAlpha Artificial Intelligence Internship**.
