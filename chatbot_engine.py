@@ -92,6 +92,11 @@ def _lemmatize(token: str) -> str:
     return token
 
 
+def _normalize_phrase(text: str) -> str:
+    """Lowercases and strips punctuation for literal phrase matching."""
+    return " ".join(re.sub(r"[^a-z0-9\s]", " ", text.lower()).split())
+
+
 def preprocess_text(text: str) -> str:
     """
     Cleans, tokenizes, removes stopwords, and lemmatizes input text.
@@ -153,11 +158,16 @@ class FAQChatbotEngine:
     def build_index(self) -> None:
         """Preprocesses questions and builds the TF-IDF feature matrix."""
         self.processed_corpus = []
+        self.literal_corpus = []
         for item in self.faqs:
             question = item.get("question", "")
             keywords = " ".join(item.get("keywords", []))
             processed = preprocess_text(f"{question} {keywords}")
             self.processed_corpus.append(processed)
+            # Space-padded so literal checks respect word boundaries
+            # (e.g. "task 1" must not match "task 10").
+            literal = _normalize_phrase(f"{question} {keywords}")
+            self.literal_corpus.append(f" {literal} ")
 
         self.vectorizer = TfidfVectorizer(ngram_range=(1, 2), sublinear_tf=True)
         self.tfidf_matrix = self.vectorizer.fit_transform(self.processed_corpus)
@@ -209,9 +219,18 @@ class FAQChatbotEngine:
         query_vector = self.vectorizer.transform([processed_query])
         similarity_scores = cosine_similarity(query_vector, self.tfidf_matrix).flatten()
 
+        # Boost FAQs that literally contain the user's phrase. TF-IDF alone can
+        # over-weight a common word such as "task" and pick a generic answer
+        # over a specific one (e.g. "What is Task 1 about?" -> "one task").
+        phrase = f" {_normalize_phrase(cleaned_for_check)} "
+        if len(phrase.strip()) >= 4:
+            for idx, haystack in enumerate(self.literal_corpus):
+                if phrase in haystack:
+                    similarity_scores[idx] += 0.30
+
         ranked_indices = similarity_scores.argsort()[::-1]
         best_index = ranked_indices[0]
-        best_score = float(similarity_scores[best_index])
+        best_score = min(float(similarity_scores[best_index]), 1.0)
         best_faq = self.faqs[best_index]
 
         suggestions = [self.faqs[idx]["question"] for idx in ranked_indices[1:4]]
