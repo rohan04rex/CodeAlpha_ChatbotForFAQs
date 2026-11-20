@@ -1,6 +1,6 @@
 # CodeAlpha — Chatbot for FAQs 
 
-An NLP-powered conversational agent that matches user questions against a structured FAQ knowledge base using text preprocessing (tokenization, cleaning, lemmatization), TF-IDF vector space modeling, and cosine similarity matching. Built as part of the **CodeAlpha Artificial Intelligence Internship** (Task 2) and runs **entirely locally — no API key or external service is required**.
+An NLP-powered conversational agent that matches user questions against a structured FAQ knowledge base using text preprocessing (tokenization, cleaning, lemmatization), TF-IDF vector space modeling, and cosine similarity matching. Built as part of the **CodeAlpha Artificial Intelligence Internship** and runs **entirely locally — no API key or external service is required**.
 
 ![Project Banner](https://img.shields.io/badge/CodeAlpha-AI_Internship-6366f1?style=for-the-badge)
 ![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
@@ -13,7 +13,7 @@ An NLP-powered conversational agent that matches user questions against a struct
 
 ## 📌 Project Overview
 
-This project satisfies all requirements for **Task 2: Chatbot for FAQs** in the CodeAlpha AI Internship:
+
 
 1. **FAQ Collection:** Structured knowledge base in `data/faqs.json` with 27 curated entries covering submission rules, repository naming, completion criteria, perks, technical tasks, and support.
 2. **NLP Preprocessing:** Text cleaning, tokenization (`nltk.word_tokenize`), stopword filtering (`nltk.corpus.stopwords`), and lemmatization (`WordNetLemmatizer`).
