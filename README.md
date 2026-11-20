@@ -7,7 +7,7 @@ An NLP-powered conversational agent that matches user questions against a struct
 ![NLTK](https://img.shields.io/badge/NLP-NLTK_3.8-green?style=for-the-badge&logo=python)
 ![Scikit-Learn](https://img.shields.io/badge/Model-TF--IDF_Cosine_Similarity-orange?style=for-the-badge&logo=scikitlearn)
 ![Accuracy](https://img.shields.io/badge/Accuracy-%7E98%25-brightgreen?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+
 
 ---
 
