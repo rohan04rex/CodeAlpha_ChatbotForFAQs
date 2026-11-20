@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CodeAlpha AI Internship Task 2: NLP-powered FAQ Chatbot using NLTK preprocessing, TF-IDF vectorization, and Cosine Similarity matching.">
+    <meta name="keywords" content="CodeAlpha, FAQ Chatbot, NLP, NLTK, Cosine Similarity, Artificial Intelligence, Chatbot">
+    <meta name="author" content="CodeAlpha Intern">
+    <title>CodeAlpha — AI FAQ Chatbot</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans, Racing Sans One & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Racing+Sans+One&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dark-theme">
+    <!-- Decorative background glow -->
+    <div class="aurora-glow" aria-hidden="true"></div>
+
+    <div class="chat-app-wrapper">
+        <!-- Main Chat Card -->
+        <div class="chat-card">
+            <!-- Header -->
+            <header class="chat-header">
+                <div class="bot-profile">
+                    <div class="avatar-ring">
+                        <div class="bot-avatar">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <span class="online-indicator" title="NLP Engine Active"></span>
+                    </div>
+                    <div class="bot-info">
+                        <h1 class="bot-title">CodeAlpha <span class="gradient-text">FAQ Assistant</span></h1>
+                        <p class="bot-status">Local NLP engine active</p>
+                    </div>
+                </div>
+
+                <div class="header-controls">
+                    <button id="browseFaqBtn" class="pill-btn" title="Browse Knowledge Base">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                        <span>Browse FAQs</span>
+                    </button>
+                    <button id="clearChatBtn" class="icon-btn" title="Clear Conversation" aria-label="Clear Chat">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                        </svg>
+                    </button>
+                    <button id="themeToggleBtn" class="icon-btn" title="Toggle Theme" aria-label="Toggle Dark/Light Mode">
+                        <svg class="theme-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Chat Message Stream -->
+            <main class="chat-messages" id="chatMessages" aria-live="polite">
+                <!-- Welcome Bot Message -->
+                <div class="message-row bot-row">
+                    <div class="msg-avatar bot-avatar-small">✦</div>
+                    <div class="msg-bubble-wrap">
+                        <div class="msg-bubble bot-bubble">
+                            <p><strong>Welcome to CodeAlpha FAQ Assistant!</strong></p>
+                            <p>I am trained on official CodeAlpha AI Internship guidelines, project submission rules, certificate criteria, and technical task details.</p>
+                            <p>Ask me a question or tap a popular prompt below to get started:</p>
+                        </div>
+                        <div class="msg-meta">
+                            <span class="msg-time" id="initTime">Just now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Suggestion Chips Container -->
+                <div class="suggestions-container" id="initSuggestions">
+                    <span class="suggestions-label">Popular Questions:</span>
+                    <div class="suggestion-chips">
+                        <button class="chip" data-query="How many tasks do I need to complete to get the certificate?">Minimum Tasks</button>
+                        <button class="chip" data-query="What is the required GitHub repository naming format?">GitHub Repo Naming</button>
+                        <button class="chip" data-query="How do I submit my completed project?">Submission Form</button>
+                        <button class="chip" data-query="What perks and benefits will I receive from this internship?">Internship Perks</button>
+                        <button class="chip" data-query="How does this FAQ Chatbot work under the hood?">NLP & Cosine Similarity</button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="msg-avatar bot-avatar-small">✦</div>
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="typing-text">NLP engine analyzing...</span>
+            </div>
+
+            <!-- Chat input area -->
+            <footer class="chat-input-area">
+                <form id="chatForm" class="chat-form">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        class="chat-input" 
+                        placeholder="Send message..." 
+                        autocomplete="off"
+                        maxlength="300"
+                        required
+                    />
+                    <button type="submit" id="sendBtn" class="send-btn" title="Send message" aria-label="Send Message">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+                <div class="input-hints">
+                    <span>Press Enter to send </span>
+                </div>
+            </footer>
+        </div>
+
+        <!-- FAQ Drawer Modal -->
+        <div class="faq-modal-overlay" id="faqModal" role="dialog" aria-modal="true" aria-labelledby="faqModalTitle" style="display: none;">
+            <div class="faq-modal">
+                <div class="faq-modal-header">
+                    <h2 id="faqModalTitle">📚 FAQ Knowledge Base</h2>
+                    <button id="closeModalBtn" class="close-btn" aria-label="Close Modal">&times;</button>
+                </div>
+                <div class="faq-filter-bar">
+                    <input type="text" id="faqSearchInput" placeholder="Filter FAQs..." class="faq-filter-input" />
+                </div>
+                <div class="faq-modal-list" id="faqModalList">
+                    {% for item in faqs %}
+                        <div class="faq-item" data-question="{{ item.question }}">
+                            <div class="faq-item-header">
+                                <span class="faq-category-tag">{{ item.category }}</span>
+                                <span class="faq-ask-link">Ask this ➔</span>
+                            </div>
+                            <h3 class="faq-item-q">{{ item.question }}</h3>
+                            <p class="faq-item-a">{{ item.answer }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Tag -->
+        <footer class="app-footer">
+            <p>CodeAlpha AI Internship — <strong>Task 2: Chatbot for FAQs</strong></p>
+            <p class="footer-links">
+                <span>Repository: <code>CodeAlpha_ChatbotForFAQs</code></span>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Client Script -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

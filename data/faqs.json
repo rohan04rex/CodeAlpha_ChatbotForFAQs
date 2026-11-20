@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "category": "Internship Rules",
+    "question": "How many tasks do I need to complete to get the certificate?",
+    "answer": "To be eligible for the internship certificate, participants must complete a minimum of two (2) or three (3) tasks out of the 4 assigned tasks. Submitting only one task will be considered incomplete and certificates will not be issued in such cases.",
+    "keywords": ["tasks", "minimum", "certificate", "eligibility", "completion", "how many", "criteria"]
+  },
+  {
+    "id": 2,
+    "category": "Submission Guidelines",
+    "question": "What is the required GitHub repository naming format?",
+    "answer": "Upload your complete source code to GitHub in a public repository named: CodeAlpha_ProjectName (for example, CodeAlpha_LanguageTranslationTool or CodeAlpha_ChatbotForFAQs).",
+    "keywords": ["github", "repository", "name", "naming", "repo", "format", "projectname"]
+  },
+  {
+    "id": 3,
+    "category": "Submission Guidelines",
+    "question": "How do I submit my completed project?",
+    "answer": "A submission form will be shared in your respective WhatsApp group. You are required to submit your completed task only through that official form. Make sure to double check your GitHub link and LinkedIn video post link before submitting.",
+    "keywords": ["submit", "submission", "form", "whatsapp", "link", "how to submit"]
+  },
+  {
+    "id": 4,
+    "category": "Submission Guidelines",
+    "question": "Do I need to post a video explanation on LinkedIn?",
+    "answer": "Yes! As part of the intern instructions, you must post a video explanation of your project on LinkedIn with your GitHub repository link and tag @CodeAlpha.",
+    "keywords": ["linkedin", "video", "explanation", "tag", "post", "social media", "demo"]
+  },
+  {
+    "id": 5,
+    "category": "Internship Perks",
+    "question": "What perks and benefits will I receive from this internship?",
+    "answer": "Internship perks include: (1) Official Internship Offer Letter, (2) QR Verified Completion Certificate, (3) Unique ID Certificate, (4) Letter of Recommendation based on performance, (5) Job Opportunities and Placement Support, and (6) Resume Building Support.",
+    "keywords": ["perks", "benefits", "offer letter", "certificate", "lor", "recommendation", "placement", "resume"]
+  },
+  {
+    "id": 6,
+    "category": "AI Tasks",
+    "question": "What is Task 1 about?",
+    "answer": "Task 1 is the 'Language Translation Tool'. It requires creating a user interface where users can enter text and select source/target languages, using a translation API (such as Google Translate API or Microsoft Translator), displaying translated text clearly, and optionally adding a copy button or text-to-speech feature.",
+    "keywords": ["task 1", "translation", "translator", "language", "deep-translator", "google translate"]
+  },
+  {
+    "id": 7,
+    "category": "AI Tasks",
+    "question": "What is Task 2 about?",
+    "answer": "Task 2 is the 'Chatbot for FAQs'. It involves collecting FAQs on a topic, preprocessing the text using NLP libraries like NLTK or SpaCy (tokenizing, cleaning, lemmatizing), matching user questions using cosine similarity or intent matching, displaying the best answer, and optionally creating a simple chat UI.",
+    "keywords": ["task 2", "chatbot", "faq", "nltk", "spacy", "cosine similarity", "intent matching"]
+  },
+  {
+    "id": 8,
+    "category": "AI Tasks",
+    "question": "What is Task 3 about?",
+    "answer": "Task 3 is 'Music Generation with AI'. It requires collecting MIDI music data, preprocessing sequences with music21, training a deep learning model (like LSTM RNNs or GANs) to learn musical patterns, and generating new musical sequences saved as MIDI/audio files.",
+    "keywords": ["task 3", "music", "generation", "midi", "lstm", "rnn", "gan", "music21"]
+  },
+  {
+    "id": 9,
+    "category": "AI Tasks",
+    "question": "What is Task 4 about?",
+    "answer": "Task 4 is 'Object Detection and Tracking'. It requires setting up real-time video input via webcam or video file using OpenCV, utilizing a pre-trained model (like YOLO or Faster R-CNN) for detection, applying tracking algorithms like SORT or Deep SORT, and displaying bounding boxes with tracking IDs in real time.",
+    "keywords": ["task 4", "object detection", "tracking", "yolo", "opencv", "sort", "deep sort"]
+  },
+  {
+    "id": 10,
+    "category": "Contact & Support",
+    "question": "How can I contact CodeAlpha support?",
+    "answer": "You can reach CodeAlpha via WhatsApp at +91 9336576683, by email at services@codealpha.tech or services.codealpha@gmail.com, or visit the official website at www.codealpha.tech.",
+    "keywords": ["contact", "support", "email", "whatsapp", "phone", "helpdesk", "reach"]
+  },
+  {
+    "id": 11,
+    "category": "Submission Guidelines",
+    "question": "When is the submission deadline or last date for projects?",
+    "answer": "The submission deadline is specified in your official Internship Offer Letter (usually 4 weeks / 1 month from your batch start date). The final submission date and the submission Google Form link are also formally announced by your coordinator in the official CodeAlpha WhatsApp group before the deadline.",
+    "keywords": ["deadline", "last date", "submission date", "date", "when to submit", "which date", "due date", "timeline", "end date"]
+  },
+  {
+    "id": 12,
+    "category": "Internship Rules",
+    "question": "What is the duration of the CodeAlpha internship?",
+    "answer": "The standard internship period lasts for 1 month (4 weeks) from the start date indicated on your offer letter.",
+    "keywords": ["duration", "how long", "time period", "weeks", "month", "internship duration"]
+  },
+  {
+    "id": 13,
+    "category": "Submission Guidelines",
+    "question": "Can I get an extension on the submission deadline?",
+    "answer": "If you require an extension due to exams or emergencies, you must contact the CodeAlpha support team in advance on WhatsApp (+91 9336576683) or email services@codealpha.tech with your Intern ID and reason.",
+    "keywords": ["extension", "extend deadline", "more time", "late submission", "delay", "postpone"]
+  },
+  {
+    "id": 14,
+    "category": "Internship Rules",
+    "question": "What happens if I only submit one task?",
+    "answer": "Submitting only one task is considered incomplete under CodeAlpha guidelines. Certificates will not be issued in such cases. You must complete at least 2 or 3 tasks.",
+    "keywords": ["one task", "single task", "incomplete", "disqualified", "minimum tasks"]
+  },
+  {
+    "id": 15,
+    "category": "Internship Rules",
+    "question": "Can I share my internship offer letter or status on LinkedIn?",
+    "answer": "Yes, instruction #1 explicitly encourages interns to share their internship status and offer letter on LinkedIn while tagging @CodeAlpha.",
+    "keywords": ["share", "offer letter", "linkedin", "tagging", "announcement"]
+  },
+  {
+    "id": 16,
+    "category": "NLP & Architecture",
+    "question": "How does this FAQ Chatbot work under the hood?",
+    "answer": "The chatbot uses a fully local NLP pipeline: NLTK cleans, tokenizes, and lemmatizes your question, TF-IDF turns the FAQ knowledge base and your question into vectors, and Cosine Similarity ranks the closest FAQ. The highest-ranked answer is displayed with a confidence score and related questions. No external API or API key is required.",
+    "keywords": ["how does it work", "architecture", "under the hood", "algorithm", "cosine similarity", "tf-idf", "local nlp", "mechanism"]
+  },
+  {
+    "id": 17,
+    "category": "NLP & Architecture",
+    "question": "What is Cosine Similarity in NLP?",
+    "answer": "Cosine Similarity measures the cosine of the angle between two non-zero vectors in a multi-dimensional space. In NLP, it determines how semantically similar a user query is to an FAQ question regardless of document length.",
+    "keywords": ["what is cosine similarity", "cosine", "vector", "angle", "math", "metric"]
+  },
+  {
+    "id": 18,
+    "category": "NLP & Architecture",
+    "question": "What is TF-IDF vectorization?",
+    "answer": "TF-IDF stands for Term Frequency-Inverse Document Frequency. It evaluates how important a word is to a document within a corpus, balancing frequent informative words while downweighting universally common words.",
+    "keywords": ["tf-idf", "term frequency", "vectorization", "definition"]
+  },
+  {
+    "id": 19,
+    "category": "Internship Perks",
+    "question": "How is the completion certificate verified?",
+    "answer": "The CodeAlpha completion certificate is QR verified and includes a Unique ID Certificate that can be verified online by recruiters and academic institutions.",
+    "keywords": ["verification", "qr verified", "qr code", "unique id", "verify certificate"]
+  },
+  {
+    "id": 20,
+    "category": "Submission Guidelines",
+    "question": "Where do I find the project submission form?",
+    "answer": "The submission form link is shared directly by the CodeAlpha coordinator in your domain's official WhatsApp group near the submission deadline.",
+    "keywords": ["where is form", "find form", "submission link", "whatsapp group"]
+  },
+  {
+    "id": 21,
+    "category": "Submission Guidelines",
+    "question": "What should I include in the GitHub repository README?",
+    "answer": "A great submission README should include: project title, description, features list, technologies used, step-by-step setup instructions, how to run tests, and screenshots or GIFs of your working application.",
+    "keywords": ["readme", "documentation", "github readme", "what to include"]
+  },
+  {
+    "id": 22,
+    "category": "Internship Rules",
+    "question": "Can I use external libraries like Flask and NLTK for the tasks?",
+    "answer": "Yes! Standard, industry-grade open source libraries such as Flask, Scikit-Learn, NLTK, OpenCV, and deep-translator are fully encouraged and expected.",
+    "keywords": ["libraries", "frameworks", "allowed", "flask", "nltk", "external packages"]
+  },
+  {
+    "id": 23,
+    "category": "Internship Perks",
+    "question": "Who gets the Letter of Recommendation (LOR)?",
+    "answer": "A Letter of Recommendation is awarded to interns based on their project performance, code quality, presentation, and timely completion of tasks.",
+    "keywords": ["lor", "letter of recommendation", "who gets lor", "criteria for lor"]
+  },
+  {
+    "id": 24,
+    "category": "NLP & Architecture",
+    "question": "Why is text lemmatization used in this chatbot?",
+    "answer": "Lemmatization uses vocabulary and morphological analysis to return the base dictionary form of a word (the lemma). For instance, 'submitting', 'submitted', and 'submits' all map to 'submit', improving similarity matching accuracy.",
+    "keywords": ["lemmatization", "lemma", "wordnet", "stemming vs lemmatization", "why lemmatize"]
+  },
+  {
+    "id": 25,
+    "category": "Internship Perks",
+    "question": "When will the internship certificates be issued?",
+    "answer": "Certificates are typically issued within 7 to 14 days after the final submission deadline, once your project code and LinkedIn video demonstration have been verified by CodeAlpha evaluators.",
+    "keywords": ["certificate date", "when will certificate come", "issue date", "certificate timeline"]
+  },
+  {
+    "id": 26,
+    "category": "Contact & Support",
+    "question": "What is the official CodeAlpha website URL?",
+    "answer": "The official CodeAlpha website is https://www.codealpha.tech.",
+    "keywords": ["website", "url", "official website", "web address"]
+  },
+  {
+    "id": 27,
+    "category": "Internship Rules",
+    "question": "What domain does this internship fall under?",
+    "answer": "This internship falls under the Artificial Intelligence (AI) domain, focusing on Machine Learning, Natural Language Processing, Deep Learning, and Computer Vision workflows.",
+    "keywords": ["domain", "track", "artificial intelligence", "ai domain"]
+  }
+]
