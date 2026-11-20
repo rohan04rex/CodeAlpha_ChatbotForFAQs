@@ -1,4 +1,4 @@
-# CodeAlpha — Chatbot for FAQs (Task 2)
+# CodeAlpha — Chatbot for FAQs 
 
 An NLP-powered conversational agent that matches user questions against a structured FAQ knowledge base using text preprocessing (tokenization, cleaning, lemmatization), TF-IDF vector space modeling, and cosine similarity matching. Built as part of the **CodeAlpha Artificial Intelligence Internship** (Task 2) and runs **entirely locally — no API key or external service is required**.
 
